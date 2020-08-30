@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_framework.dart';
-import 'package:eseksa/App.dart';
+import 'package:eseksa/views/OnBoardingPage.dart';
 
 void main() => runApp(MyApp());
 
@@ -23,11 +23,11 @@ class MyApp extends StatelessWidget {
       ),
       title: 'E-Seksa',
       theme: ThemeData(
-        primaryColor: Color(0xFF170ec2),
-        accentColor: Colors.cyan[600],
+        primaryColor: Color(0xFF5B16D0),
+        accentColor: Color(0xFF5036D5),
         fontFamily: 'Kantumruy',
       ),
-      home: App(),
+      home: OnBoardingPage(),
       debugShowCheckedModeBanner: false,
     );
   }

@@ -9,6 +9,7 @@ class App extends StatefulWidget {
 
 class _AppState extends State<App> {
   int currentIndex = 0;
+  bool isDark = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,21 +56,56 @@ class _AppState extends State<App> {
           padding: EdgeInsets.zero,
           children: [
             DrawerHeader(
-              child: Text('សូមស្វាគមន៍'),
+              child: Center(
+                child: Column(
+                  children: [
+                    Container(
+                      width: 100,
+                      height: 100,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        shape: BoxShape.circle,
+                        image: DecorationImage(
+                          image: AssetImage("assets/images/man.png"),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                    ),
+                    Text(
+                      'សុខ ដារ៉ា',
+                      style: TextStyle(fontSize: 20, color: Colors.white),
+                    )
+                  ],
+                ),
+              ),
               decoration: BoxDecoration(
-                color: Color(0xFF170ec2),
+                color: Color(0xFF5B16D0),
               ),
             ),
             ListTile(
-              leading: Icon(Feather.home),
-              title: Text('ទំព័រដើម'),
+              leading: Icon(Feather.user_check),
+              title: Text('ព័ត៌មានអំពីខ្ញុំ'),
               onTap: () {
                 // TODO: implement
               },
             ),
             ListTile(
-              leading: Icon(Feather.info),
+              leading: Icon(AntDesign.appstore_o),
+              title: Text('ផ្សេងៗ'),
+              onTap: () {
+                // TODO: implement
+              },
+            ),
+            ListTile(
+              leading: Icon(AntDesign.infocirlceo),
               title: Text('អំពីយើង'),
+              onTap: () {
+                // TODO: implement
+              },
+            ),
+            ListTile(
+              leading: Icon(AntDesign.setting),
+              title: Text('ការកំណត់'),
               onTap: () {
                 // TODO: implement
               },
@@ -77,8 +113,14 @@ class _AppState extends State<App> {
           ],
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Color(0xFF5B16D0),
+        onPressed: () => setState(() => isDark = true),
+        tooltip: 'Change to Dark Mode',
+        child: const Icon(Feather.moon),
+      ),
       bottomNavigationBar: BottomNavyBar(
-        backgroundColor: Color(0xFF170ec2),
+        backgroundColor: Color(0xFF5B16D0),
         selectedIndex: currentIndex,
         showElevation: true,
         itemCornerRadius: 8,
@@ -88,7 +130,7 @@ class _AppState extends State<App> {
         }),
         items: [
           BottomNavyBarItem(
-            icon: Icon(Feather.home),
+            icon: Icon(AntDesign.home),
             title: Text(
               'ទំព័រដើម',
               style: TextStyle(fontFamily: 'Kantumruy'),
@@ -98,7 +140,7 @@ class _AppState extends State<App> {
             textAlign: TextAlign.center,
           ),
           BottomNavyBarItem(
-            icon: Icon(Feather.play_circle),
+            icon: Icon(AntDesign.playcircleo),
             title: Text(
               'វីដេអូ',
               style: TextStyle(fontFamily: 'Kantumruy'),
@@ -118,7 +160,7 @@ class _AppState extends State<App> {
             textAlign: TextAlign.center,
           ),
           BottomNavyBarItem(
-            icon: Icon(Feather.list),
+            icon: Icon(Octicons.list_ordered),
             title: Text(
               'តេស្ត',
               style: TextStyle(fontFamily: 'Kantumruy'),
