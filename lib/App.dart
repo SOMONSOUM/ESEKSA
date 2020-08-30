@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 
 class App extends StatefulWidget {
@@ -15,7 +16,7 @@ class _AppState extends State<App> {
         leading: Builder(
           builder: (BuildContext context) {
             return IconButton(
-              icon: const Icon(Icons.translate),
+              icon: const Icon(Feather.align_left),
               onPressed: () {
                 Scaffold.of(context).openDrawer();
               },
@@ -32,6 +33,16 @@ class _AppState extends State<App> {
                 fontWeight: FontWeight.w700),
           ),
         ),
+        actions: [
+          IconButton(
+            icon: Icon(Feather.bell),
+            onPressed: () => {},
+          ),
+          IconButton(
+            icon: Icon(Icons.translate),
+            onPressed: () => {},
+          ),
+        ],
       ),
       body: Center(
         child: Text(
@@ -42,6 +53,28 @@ class _AppState extends State<App> {
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
+          children: [
+            DrawerHeader(
+              child: Text('សូមស្វាគមន៍'),
+              decoration: BoxDecoration(
+                color: Color(0xFF170ec2),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Feather.home),
+              title: Text('ទំព័រដើម'),
+              onTap: () {
+                // TODO: implement
+              },
+            ),
+            ListTile(
+              leading: Icon(Feather.info),
+              title: Text('អំពីយើង'),
+              onTap: () {
+                // TODO: implement
+              },
+            ),
+          ],
         ),
       ),
       bottomNavigationBar: BottomNavyBar(
@@ -55,7 +88,7 @@ class _AppState extends State<App> {
         }),
         items: [
           BottomNavyBarItem(
-            icon: Icon(Icons.home),
+            icon: Icon(Feather.home),
             title: Text(
               'ទំព័រដើម',
               style: TextStyle(fontFamily: 'Kantumruy'),
@@ -65,7 +98,7 @@ class _AppState extends State<App> {
             textAlign: TextAlign.center,
           ),
           BottomNavyBarItem(
-            icon: Icon(Icons.play_circle_filled),
+            icon: Icon(Feather.play_circle),
             title: Text(
               'វីដេអូ',
               style: TextStyle(fontFamily: 'Kantumruy'),
@@ -75,7 +108,7 @@ class _AppState extends State<App> {
             textAlign: TextAlign.center,
           ),
           BottomNavyBarItem(
-            icon: Icon(Icons.book),
+            icon: Icon(Feather.book_open),
             title: Text(
               'សៀវភៅ',
               style: TextStyle(fontFamily: 'Kantumruy'),
@@ -85,7 +118,7 @@ class _AppState extends State<App> {
             textAlign: TextAlign.center,
           ),
           BottomNavyBarItem(
-            icon: Icon(Icons.format_list_numbered),
+            icon: Icon(Feather.list),
             title: Text(
               'តេស្ត',
               style: TextStyle(fontFamily: 'Kantumruy'),
