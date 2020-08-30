@@ -12,34 +12,5 @@ ThemeData _buildDefaultTheme() {
 }
 
 TextTheme _buildDefaultTextTheme(TextTheme base) {
-  return base.copyWith(
-    headline: base.headline
-        .copyWith(fontWeight: FontWeight.w500, fontFamily: 'Alibaba Sans'),
-    title: base.title.copyWith(
-        color: Colors.black,
-        fontWeight: FontWeight.w700,
-        fontSize: 30.0,
-        fontFamily: 'Alibaba Sans'),
-    subhead: base.subhead.copyWith(
-        color: Colors.black,
-        fontWeight: FontWeight.w700,
-        fontSize: 22.0,
-        fontFamily: 'Alibaba Sans'),
-    display1: base.display1.copyWith(
-      color: Colors.black87,
-      fontWeight: FontWeight.w500,
-      fontSize: 16.0,
-    ),
-    display2:
-        base.display2.copyWith(fontSize: 14.0, fontFamily: 'Alibaba Sans'),
-    caption: base.caption.copyWith(
-        fontWeight: FontWeight.w400,
-        fontSize: 14.0,
-        fontFamily: 'Alibaba Sans'),
-    body1: base.body1.copyWith(fontSize: 16.0, fontFamily: 'Alibaba Sans'),
-    body2: base.body2.copyWith(
-        fontWeight: FontWeight.w500,
-        fontSize: 16.0,
-        fontFamily: 'Alibaba Sans'),
-  );
+  return base.copyWith();
 }
