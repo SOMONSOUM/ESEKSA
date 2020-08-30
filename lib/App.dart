@@ -1,3 +1,8 @@
+import 'package:eseksa/utils/colors.dart';
+import 'package:eseksa/views/book/bookPage.dart';
+import 'package:eseksa/views/home/HomePage.dart';
+import 'package:eseksa/views/test/TestPage.dart';
+import 'package:eseksa/views/video/VideoPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
@@ -13,44 +18,12 @@ class _AppState extends State<App> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: Builder(
-          builder: (BuildContext context) {
-            return IconButton(
-              icon: const Icon(Feather.align_left),
-              onPressed: () {
-                Scaffold.of(context).openDrawer();
-              },
-              tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
-            );
-          },
-        ),
-        title: Center(
-          child: Text(
-            'E-SEKSA',
-            style: TextStyle(
-                fontFamily: 'Alibaba Sans',
-                fontSize: 24,
-                fontWeight: FontWeight.w700),
-          ),
-        ),
-        actions: [
-          IconButton(
-            icon: Icon(Feather.bell),
-            onPressed: () => {},
-          ),
-          IconButton(
-            icon: Icon(Icons.translate),
-            onPressed: () => {},
-          ),
-        ],
-      ),
-      body: Center(
-        child: Text(
-          'សូមស្វាគមន៍',
-          style: TextStyle(fontSize: 20),
-        ),
-      ),
+      body: [
+        HomePage(),
+        VideoPage(),
+        BookPage(),
+        TestPage(),
+      ].elementAt(currentIndex),
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
@@ -79,7 +52,7 @@ class _AppState extends State<App> {
                 ),
               ),
               decoration: BoxDecoration(
-                color: Color(0xFF5B16D0),
+                color: SEKSAColors.primary,
               ),
             ),
             ListTile(
@@ -114,13 +87,13 @@ class _AppState extends State<App> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Color(0xFF5B16D0),
+        backgroundColor: SEKSAColors.primary,
         onPressed: () => setState(() => isDark = true),
         tooltip: 'Change to Dark Mode',
         child: const Icon(Feather.moon),
       ),
       bottomNavigationBar: BottomNavyBar(
-        backgroundColor: Color(0xFF5B16D0),
+        backgroundColor: SEKSAColors.primary,
         selectedIndex: currentIndex,
         showElevation: true,
         itemCornerRadius: 8,

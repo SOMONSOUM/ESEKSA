@@ -25,7 +25,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
       titleTextStyle: kTitleStyle,
       bodyTextStyle: kSubtitleStyle,
       descriptionPadding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
-      pageColor: Color(0xFF5B16D0),
+      pageColor: Color(0xff304ffe),
       imagePadding: EdgeInsets.zero,
     );
 

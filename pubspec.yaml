@@ -27,6 +27,7 @@ dev_dependencies:
   flutter_icons: ^1.1.0
   introduction_screen: ^1.0.9
   flutter_launcher_icons: ^0.7.5
+  flutter_spinkit: "^4.1.2"
 
 flutter_icons:
   android: true
