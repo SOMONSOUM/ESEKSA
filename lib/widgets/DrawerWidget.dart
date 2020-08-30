@@ -1,3 +1,4 @@
+import 'package:eseksa/models/User.dart';
 import 'package:eseksa/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
@@ -24,7 +25,7 @@ Widget drawerWidget() {
                   ),
                 ),
                 Text(
-                  'សុខ ដារ៉ា',
+                  User.username,
                   style: TextStyle(fontSize: 20, color: Colors.white),
                 )
               ],
