@@ -1,7 +1,9 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:eseksa/constant/Constant.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:eseksa/App.dart';
+import 'package:eseksa/views/onboarding/on_boarding_page.dart';
 import 'package:eseksa/utils/colors.dart';
 
 class SplashPage extends StatefulWidget {
@@ -12,11 +14,28 @@ class SplashPage extends StatefulWidget {
 class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
-    Timer(
-      Duration(seconds: 4),
-      () => Navigator.of(context).pushReplacementNamed(onBoardingPage),
-    );
+    Timer(Duration(seconds: 4), () => checkFirstSeen());
     super.initState();
+  }
+
+  Future checkFirstSeen() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    bool _seen = (prefs.getBool('seen') ?? false);
+
+    if (_seen) {
+      Navigator.of(context).pushReplacement(
+        new MaterialPageRoute(
+          builder: (context) => new App(),
+        ),
+      );
+    } else {
+      await prefs.setBool('seen', true);
+      Navigator.of(context).pushReplacement(
+        new MaterialPageRoute(
+          builder: (context) => new OnBoardingPage(),
+        ),
+      );
+    }
   }
 
   @override
@@ -42,7 +61,7 @@ class _SplashPageState extends State<SplashPage> {
                       CircleAvatar(
                         backgroundColor: Colors.transparent,
                         child: Image.asset('assets/images/eseksa.png'),
-                        radius: 50,
+                        radius: 70,
                       ),
                       Padding(
                         padding: EdgeInsets.only(top: 10),

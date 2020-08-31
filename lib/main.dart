@@ -1,5 +1,4 @@
 import 'package:flutter/services.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:eseksa/constant/Constant.dart';
 import 'package:eseksa/views/splashscreen/splash_page.dart';
 import 'package:eseksa/views/onboarding/on_boarding_page.dart';
@@ -25,7 +24,7 @@ class MyApp extends StatelessWidget {
         accentColor: SEKSAColors.primary,
       ),
       home: SplashPage(),
-      initialRoute: homePage,
+      initialRoute: '/',
       routes: <String, WidgetBuilder>{
         onBoardingPage: (BuildContext context) => new OnBoardingPage(),
       },

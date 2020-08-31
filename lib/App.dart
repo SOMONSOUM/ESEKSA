@@ -3,9 +3,9 @@ import 'package:flutter_icons/flutter_icons.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:eseksa/utils/colors.dart';
 import 'package:eseksa/views/book/bookPage.dart';
-import 'package:eseksa/views/home/HomePage.dart';
-import 'package:eseksa/views/test/TestPage.dart';
-import 'package:eseksa/views/video/VideoPage.dart';
+import 'package:eseksa/views/home/home_page.dart';
+import 'package:eseksa/views/test/test_page.dart';
+import 'package:eseksa/views/video/video_page.dart';
 import 'package:eseksa/widgets/DrawerWidget.dart';
 
 class App extends StatefulWidget {
