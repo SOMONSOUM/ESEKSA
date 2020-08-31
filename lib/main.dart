@@ -1,11 +1,14 @@
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:eseksa/constant/Constant.dart';
-import 'package:eseksa/views/onboarding/OnBoardingPage.dart';
-import 'package:eseksa/views/splashscreen/SplashPage.dart';
+import 'package:eseksa/views/splashscreen/splash_page.dart';
+import 'package:eseksa/views/onboarding/on_boarding_page.dart';
+import 'package:flutter/material.dart';
 import 'package:eseksa/utils/colors.dart';
 
-void main() => runApp(MyApp());
+Future<void> main() async {
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
@@ -22,6 +25,7 @@ class MyApp extends StatelessWidget {
         accentColor: SEKSAColors.primary,
       ),
       home: SplashPage(),
+      initialRoute: homePage,
       routes: <String, WidgetBuilder>{
         onBoardingPage: (BuildContext context) => new OnBoardingPage(),
       },

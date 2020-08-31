@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:eseksa/widgets/DrawerWidget.dart';
 import 'package:eseksa/utils/colors.dart';
 
-class TestPage extends StatefulWidget {
+class VideoPage extends StatefulWidget {
   @override
-  _TestPageState createState() => _TestPageState();
+  _VideoPageState createState() => _VideoPageState();
 }
 
-class _TestPageState extends State<TestPage> {
+class _VideoPageState extends State<VideoPage> {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
 
   @override
@@ -29,7 +30,7 @@ class _TestPageState extends State<TestPage> {
         ),
         title: Center(
           child: Text(
-            'តេស្ត',
+            'វីដេអូ',
             style: TextStyle(
                 fontFamily: 'Kantumruy',
                 fontSize: 20,
@@ -47,11 +48,12 @@ class _TestPageState extends State<TestPage> {
           ),
         ],
       ),
+      drawer: drawerWidget(),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Center(
-            child: Text('តេស្តចំណោះដឹង'),
+            child: Text('វីដេអូទាំងអស់'),
           )
         ],
       ),

@@ -1,3 +1,4 @@
+import 'package:eseksa/widgets/DrawerWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:eseksa/utils/colors.dart';
@@ -47,6 +48,7 @@ class _BookPageState extends State<BookPage> {
           ),
         ],
       ),
+      drawer: drawerWidget(),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
