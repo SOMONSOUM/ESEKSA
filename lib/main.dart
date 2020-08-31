@@ -1,13 +1,11 @@
 import 'package:flutter/services.dart';
-import 'package:eseksa/constant/Constant.dart';
 import 'package:eseksa/views/splashscreen/splash_page.dart';
 import 'package:eseksa/views/onboarding/on_boarding_page.dart';
 import 'package:flutter/material.dart';
+import 'package:eseksa/constant/Constant.dart';
 import 'package:eseksa/utils/colors.dart';
 
-Future<void> main() async {
-  runApp(MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:eseksa/utils/colors.dart';
-import 'package:eseksa/views/book/bookPage.dart';
+import 'package:eseksa/views/book/book_page.dart';
 import 'package:eseksa/views/home/home_page.dart';
 import 'package:eseksa/views/test/test_page.dart';
 import 'package:eseksa/views/video/video_page.dart';
